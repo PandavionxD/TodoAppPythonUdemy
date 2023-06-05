@@ -18,11 +18,19 @@ def register():
         password = request.form['password']
 
         user = User(username,generate_password_hash(password))
+
+        error = None
+
         user_name = User.query.filter_by(user_name=username).first()
         
         if user_name ==None:
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('auth.login'))
+        else:
+            error =  f'El usuario {username} ya esta registrado'
+        
+        flash(error)
+
 
     return render_template('auth/register.html')

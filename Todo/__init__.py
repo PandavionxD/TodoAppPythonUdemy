@@ -11,7 +11,7 @@ def createApp():
     # CONFIGURACION DEL PROYECTO
     app.config.from_mapping(
         DEBUG=True,
-        SECRETE_KEY='dev',
+        SECRET_KEY='dev',
         SQLALCHEMY_DATABASE_URI = "sqlite:///todoApp.db"
     )
 
