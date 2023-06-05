@@ -1,1 +1,3 @@
-TodoApp
+app-env
+__pycache__
+.idea
